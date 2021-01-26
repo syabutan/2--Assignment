@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <!--Display icon on the tab-->
+    <link rel="icon" href="https://png.pngtree.com/png-vector/20190320/ourmid/pngtree-vector-web-icon-png-image_848618.jpg">
+    <link href="~/css/StyleSheet1.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <!--navbar-->
+        <input type="checkbox" id="cp_navimenuid">
+        <label class="menu" for="cp_navimenuid">
+            <div class="menubar">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul>
+                <li><a id="home" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a id="grade" asp-controller="Home" asp-action="Grade">Grade</a></li>
+            </ul>
+        </label>
+
+        <!--my preferred name-->
+        <div id="container">
+            <h2>@ViewBag.header</h2>
+        </div>
+
+    </header>
+
+    @RenderBody()
+    <div style="display: flex; justify-content: center;">
+        <footer>FOOTER</footer>
+    </div>
+
+        <script src="~/js/jquery.min.js"></script>
+        <script src="~/js/Script1.js"></script>
+</body>
+</html>
