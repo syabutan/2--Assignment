@@ -11,7 +11,7 @@ namespace Assignment2.Models
         //Data validation
         [Required]
         [Range(0, 100, ErrorMessage = "Number must be between o and 100")]
-        public int Assignment { get;set; }
+        public object Assignment { get;set; }
 
         [Required]
         [Range(0, 100, ErrorMessage = "Number must be between o and 100")]

@@ -8,6 +8,7 @@
     var intex = $("#Intex").val();
 
 
+    //I have C#'s validation, but it seems that it doesn't work, I added js validation
     //alert if the user doesn't enter a number between 0 and 100
     if (assignment < 0 || assignment > 100 || isNaN(assignment)) {
         $("#Assignment").focus();
