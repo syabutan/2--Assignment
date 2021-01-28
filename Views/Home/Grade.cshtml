@@ -6,6 +6,8 @@
     ViewBag.header = "Grade";
 }
 
+@model Assignment2.Models.GradeModel
+
 <body>
     <!--Grade Calculator that takes as input a percentage of each grade category listed in the syllabus-->
     <div class="under-element">
@@ -17,25 +19,26 @@
                 Enter your grade percentage (0 to 100)
             </p>
             <div class="example2">
-                <form>
-                    <label>Assignments 50%</label>
-                    <input type="text" id="assignment" size="4" value="100" autofocus />
-                    <br />
-                    <label>Group Project 10%</label>
-                    <input type="text" id="group" size="4" value="100" />
-                    <br />
-                    <label>Quizzes 10%</label>
-                    <input type="text" id="quizz" size="4" value="100" />
-                    <br />
-                    <label>Exams 20%</label>
-                    <input type="text" id="exam" size="4" value="100" />
-                    <br />
-                    <label>INTEX 10%</label>
-                    <input type="text" id="intex" size="4" value="100" />
-                    <br />
-                    <br />
-                    <input class="decorated-btn click-down" type="button" value="Calcurate!" id="submit" />
-                    <br />
+                <form asp-action="Grade" method="post">
+                        <label>Assignments 50%</label>
+                        <input type="text" id="Assignment" asp-for="Assignment" size="4" value="100" autofocus />
+                        <br />
+                        <label>Group Project 10%</label>
+                        <input type="text" id="Group" asp-for="Group" size="4" value="100" />
+                        <br />
+                        <label>Quizzes 10%</label>
+                        <input type="text" id="Quizz" asp-for="Quizz" size="4" value="100" />
+                        <br />
+                        <label>Exams 20%</label>
+                        <input type="text" id="Exam" asp-for="Exam" size="4" value="100" />
+                        <br />
+                        <label>INTEX 10%</label>
+                        <input type="text" id="Intex" asp-for="Intex" size="4" value="100" />
+                        <br />
+                        <br />
+                        <input class="decorated-btn click-down" type="button" value="Calcurate!" id="submit" />
+                        <br />
+                <div asp-validation-summary="All"></div>
                 </form>
                 <form>
                     <h3 id="final" hidden>Your final Grade is:</h3>

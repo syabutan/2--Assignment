@@ -1,35 +1,37 @@
 ﻿$('#submit').click(function () {
 
     //Take percentage for each grade category from input and weight them 
-    var assignment = parseInt($("#assignment").val());
-    var group = parseInt($("#group").val());
-    var quizz = parseInt($("#quizz").val());
-    var exam = parseInt($("#exam").val());
-    var intex = parseInt($("#intex").val());
+    var assignment = $("#Assignment").val();
+    var group = $("#Group").val();
+    var quizz = $("#Quizz").val();
+    var exam = $("#Exam").val();
+    var intex = $("#Intex").val();
 
 
     //alert if the user doesn't enter a number between 0 and 100
     if (assignment < 0 || assignment > 100 || isNaN(assignment)) {
-        $("#assignment").focus();
+        $("#Assignment").focus();
         alert("Enter a number between 0 and 100");
     }
     else if (group < 0 || group > 100 || isNaN(group)) {
-        $("#group").focus();
+        $("#Group").focus();
         alert("Enter a number between 0 and 100");
     }
     else if (quizz < 0 || quizz > 100 || isNaN(quizz)) {
-        $("#quizz").focus();
+        $("#Quizz").focus();
         alert("Enter a number between 0 and 100");
     }
     else if (exam < 0 || exam > 100 || isNaN(exam)) {
-        $("#exam").focus();
+        $("#Exam").focus();
         alert("Enter a number between 0 and 100");
     }
     else if (intex < 0 || intex > 100 || isNaN(intex)) {
-        $("#intex").focus();
+        $("#Intex").focus();
         alert("Enter a number between 0 and 100");
     }
     else {
+
+
 
         //Calcurate a final percentage
         var total = assignment * .5 + group * .1 + quizz * .1 + exam * .2 + intex * .1;
