@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Assignment2.Controlers
+namespace Assignment2.Controllers
 {
+
     public class HomeController : Controller
     {
         public IActionResult Index()
@@ -14,16 +16,19 @@ namespace Assignment2.Controlers
             return View();
         }
 
-        [HttpGet("Grade")]
-        public IActionResult Grade()
+        [HttpGet]
+        public ViewResult Grade()
         {
             return View();
         }
 
-        [HttpPost("Grade")]
-        public IActionResult Grade (GradeModel model)
+        [HttpPost]
+        public ViewResult Grade(GradeModel info)
         {
             return View();
         }
     }
 }
+
+
+

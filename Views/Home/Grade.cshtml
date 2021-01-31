@@ -1,4 +1,6 @@
-﻿@*
+﻿@model Assignment2.Models.GradeModel
+
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -6,11 +8,16 @@
     ViewBag.header = "Grade";
 }
 
-@model Assignment2.Models.GradeModel
 
 <body>
     <!--Grade Calculator that takes as input a percentage of each grade category listed in the syllabus-->
     <div class="under-element">
+        <br />
+        <br />
+        <!--error message when the user put invalid numbers-->
+        <div style="text-align:center">
+            <div asp-validation-summary="All"></div>
+        </div>
         <br />
         <br />
         <div class="box28" style="margin:0 auto; text-align: center">
@@ -19,31 +26,28 @@
                 Enter your grade percentage (0 to 100)
             </p>
             <div class="example2">
-                <form method="post">
-                        <label>Assignments 50%</label>
-                        <input type="text" id="Assignment" asp-for="Assignment" size="4" value="100" autofocus />
-                        <br />
-                        <label>Group Project 10%</label>
-                        <input type="text" id="Group" asp-for="Group" size="4" value="100" />
-                        <br />
-                        <label>Quizzes 10%</label>
-                        <input type="text" id="Quizz" asp-for="Quizz" size="4" value="100" />
-                        <br />
-                        <label>Exams 20%</label>
-                        <input type="text" id="Exam" asp-for="Exam" size="4" value="100" />
-                        <br />
-                        <label>INTEX 10%</label>
-                        <input type="text" id="Intex" asp-for="Intex" size="4" value="100" />
-                        <br />
-                        <br />
-                        <input class="decorated-btn click-down" type="button" value="Calcurate!" id="submit" />
-                        <br />
-                <div asp-validation-summary="All"></div>
+                <form asp-action="Grade" method="post">
+                    <label>Assignments 50%</label>
+                    <input asp-for="Assignment" size="4" autofocus />
+                    <br />
+                    <label>Group Project 10%</label>
+                    <input asp-for="Group" size="4" />
+                    <br />
+                    <label>Quizzes 10%</label>
+                    <input asp-for="Quizz" size="4" />
+                    <br />
+                    <label>Exams 20%</label>
+                    <input asp-for="Exam" size="4" />
+                    <br />
+                    <label>INTEX 10%</label>
+                    <input asp-for="Intex" size="4" />
+                    <br />
+                    <br />
+                    <input type="submit" value="Calcurate" id="submit" />
+                    <br />
                 </form>
-                <form>
-                    <h3 id="final" hidden>Your final Grade is:</h3>
-                    <p style="font-size: x-large" id="letterGrade"></p>
-                </form>
+                <br />
+                <br />
             </div>
         </div>
     </div>
